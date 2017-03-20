@@ -1,0 +1,23 @@
+/**
+custom edits my Makamu E.
+these changes are designed to tweak the metis css so as toalligh the site with mt theme
+ */
+div#wrap.bg-dark.dk{
+    background-color: #F5F5F5 !important;
+    color: #53CDF6 !important;
+}
+nav.navbar.navbar-inverse.navbar-static-top{
+    background-color: #F5F5F5 !important
+}
+a{
+    color: #53CDF6 !important;
+}
+a:hover{
+    color: red !important;
+}
+div.collapse.navbar-collapse.navbar-ex1-collapse{
+    border-color: #53CDF6;
+}
+.bg-blue.dker{
+    background-color: #444444!important;
+}

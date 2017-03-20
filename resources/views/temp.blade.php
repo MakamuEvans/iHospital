@@ -2,7 +2,9 @@
 
 @section('content')
                 <div class="col-lg-12">
-
+                    <p>
+                        Blah blah blah...
+                    </p>
                 </div>
 
 

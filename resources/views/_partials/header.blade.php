@@ -103,7 +103,7 @@
             <!-- /.main-search -->                                </div>
         <!-- /.search-bar -->
         <div class="main-bar">
-            <h3>
+            <h3 style="color: #53CDF6">
                 <i class="fa fa-home"></i>&nbsp;
                 Welcome to iHospital,
             </h3>

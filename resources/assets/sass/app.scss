@@ -9,7 +9,7 @@
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 
 //font-awesome
-@import "resources/assets/sass/custom/font-awesome/css/font-awesome";
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
 
 //main.css
 @import "resources/assets/sass/custom/css/main";
@@ -25,3 +25,6 @@
 
 //style-switcher
 @import "resources/assets/sass/custom/style-switcher";
+
+//my-custom
+@import "resources/assets/sass/custom/san";
