@@ -21,3 +21,22 @@ div.collapse.navbar-collapse.navbar-ex1-collapse{
 .bg-blue.dker{
     background-color: #444444!important;
 }
+._login{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+div.panel-heading{
+    text-align: center;
+    background-color: #53CDF6 !important;
+}
+button.btn.btn-primary{
+    background-color: #53CDF6 !important;
+}
+label{
+    text-align: left !important;
+    color: #53CDF6;
+}
+.row{
+    margin-right: 15px;
+    margin-left: 15px;
+}

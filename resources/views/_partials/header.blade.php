@@ -13,7 +13,9 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a href="" class="navbar-brand">iHospital</a>
+                <a href="" class="navbar-brand">
+                    <img src="{{url('images/logo.png')}}" style="max-height: 50px;width: auto">
+                </a>
 
             </header>
 
