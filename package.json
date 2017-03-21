@@ -17,6 +17,9 @@
     "vue": "^2.1.10"
   },
   "dependencies": {
-    "metismenu": "^2.7.0"
+    "datatables": "^1.10.13",
+    "metismenu": "^2.7.0",
+    "vue": "^2.2.4",
+    "vue-router": "^2.3.0"
   }
 }

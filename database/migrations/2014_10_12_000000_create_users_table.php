@@ -22,7 +22,7 @@ class CreateUsersTable extends Migration
             $table->date('yob');
             $table->string('email')->unique();
             $table->string('password');
-            $table->string('activation_token');
+            $table->string('activation_token')->nullable();
             $table->string('active'); //1 for active 0 for inactive
             $table->string('role'); //1 for receptionist 2 for lab-technician, 3 for chemist, 4 for nurse/doctor 5 for admin
             $table->rememberToken();

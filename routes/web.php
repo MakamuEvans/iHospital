@@ -11,10 +11,16 @@
 |
 */
 
-Route::get('/', function () {
-    return view('temp');
-});
-
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
+Route::get('/', 'HomeController@index');
+
+/**
+ * managing users routes
+ */
+
+Route::post('users/add', 'RegisterController@store');
+
+Route::get('users/add', 'RegisterController@regForm');
+
+Route::get('users/view', 'RegisterController@listAll');

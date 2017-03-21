@@ -11,19 +11,6 @@ window.$ = window.jQuery = require('jquery');
 
 require('bootstrap-sass');
 
-require('metismenu');
-
-require('../sass/custom/onoffcanvas/onoffcanvas');
-
-require('../sass/custom/screenfull/screenfull');
-
-require('../sass/custom/core');
-
-require('../sass/custom/app');
-
-require('../sass/custom/style-switcher');
-
-
 /**
  * Vue is a modern JavaScript library for building interactive web interfaces
  * using reactive data binding and reusable components. Vue's API is clean

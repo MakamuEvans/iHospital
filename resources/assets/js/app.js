@@ -18,3 +18,24 @@ Vue.component('example', require('./components/Example.vue'));
 const app = new Vue({
     el: '#app'
 });
+
+
+//other js files
+
+require('metismenu');
+
+require('../sass/custom/onoffcanvas/onoffcanvas');
+
+require('../sass/custom/screenfull/screenfull');
+
+require('../sass/custom/core');
+
+require('../sass/custom/app');
+
+require('../sass/custom/style-switcher');
+
+require('../sass/custom/uikit/js/uikit');
+
+require('datatables');
+
+$('#users_table').dataTable();

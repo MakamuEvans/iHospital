@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="row">
+    <div class="col-lg-8">
 
-        <form class="form-horizontal" role="form" method="POST" action="{{ route('register') }}">
+        <form class="uk-form" role="form" method="POST" action="{{url('users/add')}}">
             {{ csrf_field() }}
 
             <!--firstname-->
@@ -37,15 +37,15 @@
                 </div>
 
                 <!--idnumber-->
-                <div class="form-group{{ $errors->has('id_number') ? ' has-error' : '' }}">
-                    <label for="id_number" class="row control-label">National Identification Number</label><br>
+                <div class="form-group{{ $errors->has('id_no') ? ' has-error' : '' }}">
+                    <label for="id_no" class="row control-label">National Identification Number</label><br>
 
                     <div class="row">
-                        <input id="id_number" type="number" max="10" class="form-control" name="id_number" value="{{ old('id_number') }}" required autofocus>
+                        <input id="id_no" type="number" class="form-control" name="id_no" value="{{ old('id_no') }}" required autofocus>
 
-                        @if ($errors->has('id_number'))
+                        @if ($errors->has('id_no'))
                             <span class="help-block">
-                                        <strong>{{ $errors->first('id_number') }}</strong>
+                                        <strong>{{ $errors->first('id_no') }}</strong>
                                     </span>
                         @endif
                     </div>
@@ -75,7 +75,7 @@
                     <label for="yob" class="row control-label">Year of Birth</label><br>
 
                     <div class="row">
-                        <input id="yob" type="text" class="form-control" name="yob" value="{{ old('yob') }}" required autofocus>
+                        <input id="yob" type="text" data-uk-datepicker="{format:'DD.MM.YYYY'}" class="form-control" name="yob" value="{{ old('yob') }}" required autofocus>
 
                         @if ($errors->has('yob'))
                             <span class="help-block">
@@ -150,5 +150,30 @@
                 </div>
             </div>
         </form>
+    </div>
+    <div class="col-lg-4" style="padding-top: 15px">
+        <div class="alert alert-danger">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <strong>Warning!</strong> <br>
+            1. Ensure NO fields are left Blank.<br>
+            3. Ensure All data is Valid.
+        </div>
+        <!-- .well well-small -->
+        <div class="well well-small dark">
+            <strong>Stats</strong> <br>
+            <ul class="list-unstyled">
+                <li>My Facility <span class="inlinesparkline pull-right">Egerton, Sanatorium</span></li>
+                <hr>
+                <li>Active Users <span class="dynamicbar pull-right">20</span></li>
+                <li>Inactive Users <span class="inlinebar pull-right">4</span></li>
+                <hr>
+                <li>Total Users <span class="dynamicsparkline pull-right">24</span></li>
+            </ul>
+        </div>
+        <!-- /.well well-small -->
+        <!-- .well well-small -->
+        <div class="well well-small dark">
+
+        </div>
     </div>
 @endsection
