@@ -11,7 +11,7 @@
                 <label for="first_name" class="col-md-4 control-label">First Name</label><br>
 
                 <div class="row">
-                    <input id="first_name" type="text" class="form-control" name="first_name" value="{{ old('first_name') }}" required autofocus>
+                    <input id="first_name" type="text" class="validate[required] form-control" name="first_name" value="{{ old('first_name') }}" required autofocus>
 
                     @if ($errors->has('first_name'))
                         <span class="help-block">
@@ -75,7 +75,7 @@
                     <label for="yob" class="row control-label">Year of Birth</label><br>
 
                     <div class="row">
-                        <input id="yob" type="text" data-uk-datepicker="{format:'DD.MM.YYYY'}" class="form-control" name="yob" value="{{ old('yob') }}" required autofocus>
+                        <input id="yob" type="text" data-uk-datepicker="{format:'YYYY/MM/DD'}" class="form-control" name="yob" value="{{ old('yob') }}" required autofocus>
 
                         @if ($errors->has('yob'))
                             <span class="help-block">

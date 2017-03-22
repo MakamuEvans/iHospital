@@ -33,9 +33,3 @@ require('../sass/custom/core');
 require('../sass/custom/app');
 
 require('../sass/custom/style-switcher');
-
-require('../sass/custom/uikit/js/uikit');
-
-require('datatables');
-
-$('#users_table').dataTable();

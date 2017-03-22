@@ -11,6 +11,12 @@
 //font-awesome
 @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
 
+//uikit
+@import url(https://cdnjs.cloudflare.com/ajax/libs/uikit/2.27.2/css/uikit.min.css);
+@import url(https://cdnjs.cloudflare.com/ajax/libs/uikit/2.27.2/css/components/datepicker.min.css);
+@import url(https://cdnjs.cloudflare.com/ajax/libs/uikit/2.27.2/css/components/datepicker.gradient.min.css);
+
+
 //main.css
 @import "resources/assets/sass/custom/css/main";
 
@@ -25,9 +31,6 @@
 
 //style-switcher
 @import "resources/assets/sass/custom/style-switcher";
-
-//uikit
-@import "custom/uikit/css/uikit.css";
 
 //my-custom
 @import "resources/assets/sass/custom/san";
