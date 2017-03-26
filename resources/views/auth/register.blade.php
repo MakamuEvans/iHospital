@@ -106,11 +106,11 @@
 
                     <div class="row">
                         <select id="role" name="role" class="form-control">
-                            <option value="1">Receptionist</option>
-                            <option value="2">Lab Technician</option>
-                            <option value="3">Chemist</option>
-                            <option value="4">Nurse/Doctor</option>
-                            <option value="5">Admin</option>
+                            <option value="Receptionist">Receptionist</option>
+                            <option value="Lab Technician">Lab Technician</option>
+                            <option value="Chemist">Chemist</option>
+                            <option value="Nurse/Doctor">Nurse/Doctor</option>
+                            <option value="Nurse/Doctor">Admin</option>
                         </select>
 
                         @if ($errors->has('role'))
