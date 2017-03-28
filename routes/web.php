@@ -29,4 +29,6 @@ Route::get('users/view', 'RegisterController@listAll');
  * Managing clients routes
  */
 Route::get('clients', 'ClientsController@index');
+Route::get('clients/add', 'ClientsController@create');
+Route::post('clients/add', 'ClientsController@store');
 

@@ -21,6 +21,12 @@ class CreateClientsTable extends Migration
             $table->string('gender');
             $table->string('yob');
             $table->string('type');
+            $table->string('phone');
+            $table->string('address')->nullable();
+            $table->string('email')->nullable();
+            $table->string('keen_type')->nullable();
+            $table->string('keen_name')->nullable();
+            $table->string('keen_contact')->nullable();
             $table->timestamps();
         });
     }

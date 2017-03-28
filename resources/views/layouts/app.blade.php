@@ -16,6 +16,8 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.13/af-2.1.3/b-1.2.4/b-colvis-1.2.4/b-flash-1.2.4/b-print-1.2.4/r-2.1.1/datatables.min.css"/>
+    {{--<link rel="stylesheet" href="{{url('assets/css/form-elements.css')}}">--}}
+
 
     <!-- Scripts -->
     <script>
@@ -34,7 +36,7 @@
                 <div class="inner bg-light lter">
                     <div class="row" style="padding-top: 15px;">
                         @if (session('status'))
-                            <div class="alert alert-info">
+                            <div class="alert alert-success">
                                 <button type="button" class="close" data-dismiss="alert">&times;</button>
                                 <strong>Success!</strong> <br>
                                 {{ session('status') }}
@@ -61,12 +63,20 @@
     </div>
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{url('assets/js/jquery.backstretch.min.js')}}"></script>
+
+    <script src="{{url('assets/js/scripts.js')}}"></script>
 
     <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.13/af-2.1.3/b-1.2.4/b-colvis-1.2.4/b-flash-1.2.4/b-print-1.2.4/r-2.1.1/datatables.min.js"></script>
     <script>
         $(function(){
             $("#dataTable").dataTable();
         })
+    </script>
+    <script>
+        $(function () {
+
+        });
     </script>
 
     <!--ui kit-->

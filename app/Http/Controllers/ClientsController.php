@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Clients;
 
 class ClientsController extends Controller
 {
@@ -28,7 +29,10 @@ class ClientsController extends Controller
      */
     public function create()
     {
-        //
+        $title = 'iHospital | Add New Client';
+        $rightbar = 'client';
+
+        return view('clients.add', compact('rightbar', 'title'));
     }
 
     /**
@@ -39,7 +43,17 @@ class ClientsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //dd($request->all());
+
+        //save user to db
+        $client = new Clients($request->all());
+        $client->save();
+
+        //return success message to page
+        return redirect()->action('ClientsController@create')
+            ->with('status', $request->first_name.' Successfully Registered to the System.')
+            ->with('newClient', $client)
+            ->with('rightbar', 'user');
     }
 
     /**

@@ -7,6 +7,8 @@
 
 require('./bootstrap');
 
+require('../sass/custom/jquery-steps/jquery.steps');
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application

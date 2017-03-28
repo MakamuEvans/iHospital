@@ -46,7 +46,7 @@
                 </li>
             </ul>
         </li>
-        <li class="">
+        <li @if(isset($rightbar)) @if($rightbar=='client')class="active" @endif @endif>
             <a href="javascript:;">
                 <i class="fa fa-user "></i>
                 <span class="link-title">Clients</span>
@@ -54,11 +54,11 @@
             </a>
             <ul class="collapse">
                 <li>
-                    <a href="">
+                    <a href="{{url('clients')}}">
                         <i class="fa fa-list"></i>&nbsp; List All </a>
                 </li>
                 <li>
-                    <a href="fixed-header-boxed.html">
+                    <a href="{{url('clients/add')}}">
                         <i class="fa fa-plus-square"></i>&nbsp; Add New Client </a>
                 </li>
             </ul>
