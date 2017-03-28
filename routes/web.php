@@ -24,3 +24,9 @@ Route::post('users/add', 'RegisterController@store');
 Route::get('users/add', 'RegisterController@regForm');
 
 Route::get('users/view', 'RegisterController@listAll');
+
+/**
+ * Managing clients routes
+ */
+Route::get('clients', 'ClientsController@index');
+
