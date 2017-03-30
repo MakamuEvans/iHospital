@@ -45,6 +45,7 @@ Route::group(['middleware' => 'logIn'], function () {
      */
     Route::get('tickets', 'TicketController@index');
     Route::get('tickets/add', 'TicketController@add_form');
+    Route::get('tickets/search', 'TicketController@searchClient');
 
 
 });

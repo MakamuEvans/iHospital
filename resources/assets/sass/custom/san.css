@@ -180,3 +180,16 @@ Vue Modal
     -webkit-transform: scale(1.1);
     transform: scale(1.1);
 }
+
+
+.pullquote-left{
+    border-left:5px solid #53CDF6;
+    margin-top: 20px;
+    background-color: #F5F5F5;
+}
+.pullquote-left:hover{
+    background-color: #49ffe1 !important;
+}
+.pullquote-left a:hover{
+    color: white !important;
+}

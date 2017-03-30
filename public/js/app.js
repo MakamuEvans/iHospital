@@ -12219,6 +12219,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = {
     mounted: function mounted() {
@@ -12227,7 +12240,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     data: function data() {
         return {
             searchTerm: '',
-            buttonText: 'Search'
+            buttonText: 'Search',
+            noResults: false,
+            results: [],
+            baseUrl: base_url
         };
     },
     methods: {
@@ -12236,8 +12252,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.buttonText = 'Searching...';
             console.log(base_url + '/tickets/search?term=' + this.searchTerm);
             axios.get(base_url + '/tickets/search?term=' + this.searchTerm).then(function (response) {
-                console.log(response);
-            }).catch(function (error) {
+                console.log(response.data);
+                if (response.data.length == 0) {
+                    relation.noResults = true;
+                } else {
+                    relation.noResults = false;
+                }
+                relation.results = response.data;
+                relation.buttonText = 'Search';
+            }.bind(this)).catch(function (error) {
                 console.log(error);
             });
         }
@@ -36050,7 +36073,9 @@ module.exports = Component.exports
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "row"
-  }, [_c('h3', [_vm._v("Search Client to Start ticket")]), _vm._v(" "), _c('hr'), _vm._v(" "), _c('h6', [_vm._v("the search takes only student id no., national id number or name")]), _vm._v(" "), _c('div', {
+  }, [_c('div', {
+    staticClass: "row"
+  }, [_c('h3', [_vm._v("Search Client to Start ticket")]), _vm._v(" "), _c('hr'), _vm._v(" "), _c('h6', [_vm._v("Search can take Student ID No, National ID No. or Name(s)")]), _vm._v(" "), _c('div', {
     staticClass: "form-group"
   }, [_c('input', {
     directives: [{
@@ -36079,7 +36104,30 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     on: {
       "click": _vm.searchClient
     }
-  }, [_vm._v(_vm._s(_vm.buttonText))])])])
+  }, [_vm._v(_vm._s(_vm.buttonText))])]), _vm._v(" "), _c('div', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.noResults),
+      expression: "noResults"
+    }],
+    staticClass: "alert alert-warning"
+  }, [_vm._v("\n            No results found. U can try a different Criteria\n        ")])]), _vm._v(" "), _vm._l((_vm.results), function(result) {
+    return _c('div', {
+      staticClass: "row pullquote-left",
+      staticStyle: {
+        "padding-left": "20px"
+      }
+    }, [_c('a', {
+      attrs: {
+        "href": _vm.baseUrl
+      }
+    }, [_c('p', [_c('b', [_vm._v("First Name:")]), _vm._v(_vm._s(result.first_name) + "   "), _c('b', {
+      staticStyle: {
+        "margin-left": "10px"
+      }
+    }, [_vm._v("Other Names:")]), _vm._v(_vm._s(result.other_names))]), _vm._v(" "), _c('p', [_c('b', [_vm._v("Client Type:")]), _vm._v(" " + _vm._s(result.type))]), _vm._v(" "), _c('p', [_c('b', [_vm._v("Year of Birth:")]), _vm._v(" " + _vm._s(result.yob))])])])
+  })], 2)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
