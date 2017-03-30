@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Clients;
+use App\SpecialCase;
 
 class ClientsController extends Controller
 {
@@ -16,10 +17,10 @@ class ClientsController extends Controller
     {
         $title = 'iHospital | Clients';
         $rightbar = 'client';
-        $users = User::all();
+        $clients = Clients::all();
         //dd($users);
 
-        return view('users.view', compact('users', 'rightbar', 'title'));
+        return view('clients.all', compact('clients', 'rightbar', 'title'));
     }
 
     /**
@@ -52,8 +53,7 @@ class ClientsController extends Controller
         //return success message to page
         return redirect()->action('ClientsController@create')
             ->with('status', $request->first_name.' Successfully Registered to the System.')
-            ->with('newClient', $client)
-            ->with('rightbar', 'user');
+            ->with('newClient', $client);
     }
 
     /**
@@ -99,5 +99,32 @@ class ClientsController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    /**
+     * Open up the special medical condition form for a recently added client
+     *
+     * @param Request $request
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function special_condition(Request $request){
+
+        $title = 'iHospital | Special Medical Conditions';
+        $rightbar = 'client';
+
+        $client_id = $request->client_id;
+        $client_name = $request->client_name;
+
+        return view('clients.special_condition.open', compact('title', 'rightbar', 'client_id', 'client_name'));
+    }
+
+    public function special_condition_save(Request $request){
+
+        //dd($request->all());
+        $special = new SpecialCase($request->all());
+        $special->save();
+
+        return redirect()->action('ClientsController@create')
+            ->with('status', 'Special Medical Condition(s) Added.');
     }
 }

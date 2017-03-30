@@ -30,12 +30,12 @@
                         </a>
                     </div>
                     <div class="btn-group">
-                        <a data-placement="bottom" data-original-title="E-mail" data-toggle="tooltip"
+                        <a data-placement="bottom" data-original-title="Pending" data-toggle="tooltip"
                            class="btn btn-default btn-sm">
                             <i class="fa fa-envelope"></i>
                             <span class="label label-warning">5</span>
                         </a>
-                        <a data-placement="bottom" data-original-title="Messages" href="#" data-toggle="tooltip"
+                        <a data-placement="bottom" data-original-title="Finished Today" href="#" data-toggle="tooltip"
                            class="btn btn-default btn-sm">
                             <i class="fa fa-comments"></i>
                             <span class="label label-danger">4</span>
@@ -47,10 +47,16 @@
                         </a>
                     </div>
                     <div class="btn-group">
-                        <a href="login.html" data-toggle="tooltip" data-original-title="Logout" data-placement="bottom"
-                           class="btn btn-metis-1 btn-sm">
+                        <a href="{{ url('/logout') }}" data-toggle="tooltip" data-original-title="Logout" data-placement="bottom"
+                           class="btn btn-metis-1 btn-sm"
+                           onclick="event.preventDefault();
+                                                 document.getElementById('logout-form').submit();" style="background-color: red;color: white;font-weight: 700">
                             <i class="fa fa-power-off"></i>
                         </a>
+
+                        <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                            {{ csrf_field() }}
+                        </form>
                     </div>
                     <div class="btn-group">
                         <a data-placement="bottom" data-original-title="Show / Hide Left" data-toggle="tooltip"

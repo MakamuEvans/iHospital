@@ -18,7 +18,10 @@ require('../sass/custom/jquery-steps/jquery.steps');
 Vue.component('example', require('./components/Example.vue'));
 
 const app = new Vue({
-    el: '#app'
+    el: '#app',
+    data: {
+        clientEdit: false
+    }
 });
 
 
@@ -35,3 +38,7 @@ require('../sass/custom/core');
 require('../sass/custom/app');
 
 require('../sass/custom/style-switcher');
+
+//require('../sass/custom/form-wizard/jquery.backstretch');
+
+//require('../sass/custom/form-wizard/scripts');

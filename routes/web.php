@@ -13,22 +13,39 @@
 
 Auth::routes();
 
-Route::get('/', 'HomeController@index');
 
-/**
- * managing users routes
- */
 
-Route::post('users/add', 'RegisterController@store');
+//Super Admin Routes
 
-Route::get('users/add', 'RegisterController@regForm');
+Route::group(['middleware' => 'logIn'], function () {
+    Route::get('/', 'HomeController@index');
+    /**
+     * managing users routes
+     */
 
-Route::get('users/view', 'RegisterController@listAll');
+    Route::post('users/add', 'RegisterController@store');
 
-/**
- * Managing clients routes
- */
-Route::get('clients', 'ClientsController@index');
-Route::get('clients/add', 'ClientsController@create');
-Route::post('clients/add', 'ClientsController@store');
+    Route::get('users/add', 'RegisterController@regForm');
+
+    Route::get('users/view', 'RegisterController@listAll');
+
+    /**
+     * Managing clients routes
+     */
+    Route::get('clients', 'ClientsController@index');
+    Route::get('clients/add', 'ClientsController@create');
+    Route::post('clients/add', 'ClientsController@store');
+
+//special condition routes
+    Route::get('clients/medical-conditions/open', 'ClientsController@special_condition');
+    Route::post('clients/medical-conditions/open', 'ClientsController@special_condition_save');
+
+    /**
+     * Ticket routes
+     */
+    Route::get('tickets', 'ClientsController@special_condition');
+
+
+});
+
 

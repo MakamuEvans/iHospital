@@ -2,12 +2,12 @@
 
 @section('content')
     <div class="col-lg-8 form-style">
-        @if (session('status'))
+        @if (session('newClient'))
             <div class="alert alert-info">
                 <button type="button" class="close" data-dismiss="alert">&times;</button>
                 <strong>Special Medical Condition(s)?</strong> <br>
                 <h6>
-                    if  <b>{{ session('newClient')->first_name }}</b>  has Special Medical Conditions. Please Click <a href="{{url('clients/medical-conditions/add?client_id='.session('newClient')->id)}}">Here</a>
+                    if  <b>{{ session('newClient')->first_name }}</b>  has Special Medical Conditions. Please Click <a href="{{url('clients/medical-conditions/open?client_id='.session('newClient')->id.'&client_name='.session('newClient')->first_name)}}">Here</a>
                 </h6>
             </div>
         @endif

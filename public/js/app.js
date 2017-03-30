@@ -11226,7 +11226,10 @@ __webpack_require__(34);
 Vue.component('example', __webpack_require__(41));
 
 var app = new Vue({
-  el: '#app'
+  el: '#app',
+  data: {
+    clientEdit: false
+  }
 });
 
 //other js files
@@ -11242,6 +11245,10 @@ __webpack_require__(33);
 __webpack_require__(32);
 
 __webpack_require__(37);
+
+//require('../sass/custom/form-wizard/jquery.backstretch');
+
+//require('../sass/custom/form-wizard/scripts');
 
 /***/ }),
 /* 11 */
@@ -12096,6 +12103,24 @@ module.exports = function spread(callback) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -35942,22 +35967,33 @@ module.exports = function normalizeComponent (
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _vm._m(0)
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "container"
+  return _c('transition', {
+    attrs: {
+      "name": "modal"
+    }
   }, [_c('div', {
-    staticClass: "row"
+    staticClass: "modal-mask"
   }, [_c('div', {
-    staticClass: "col-md-8 col-md-offset-2"
+    staticClass: "modal-wrapper"
   }, [_c('div', {
-    staticClass: "panel panel-default"
+    staticClass: "modal-container"
   }, [_c('div', {
-    staticClass: "panel-heading"
-  }, [_vm._v("Example Component")]), _vm._v(" "), _c('div', {
-    staticClass: "panel-body"
-  }, [_vm._v("\n                    I'm an example component!\n                ")])])])])])
-}]}
+    staticClass: "modal-header"
+  }, [_vm._t("header", [_vm._v("\n                        default header\n                    ")])], 2), _vm._v(" "), _c('div', {
+    staticClass: "modal-body"
+  }, [_vm._t("body", [_vm._v("\n                        Under Heavy Construction. "), _c('i', {
+    staticClass: "fa-gear"
+  })])], 2), _vm._v(" "), _c('div', {
+    staticClass: "modal-footer"
+  }, [_vm._t("footer", [_vm._v("\n                        default footer\n                        "), _c('button', {
+    staticClass: "modal-default-button",
+    on: {
+      "click": function($event) {
+        _vm.$emit('close')
+      }
+    }
+  }, [_vm._v("\n                            OK\n                        ")])])], 2)])])])])
+},staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()

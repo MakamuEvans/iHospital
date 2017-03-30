@@ -3,7 +3,10 @@
 @section('content')
                 <div class="col-lg-12">
                     <p>
-                        <example></example>
+                        <button id="show-modal" @click="clientEdit = true">Show Modal</button>
+                        <example v-show="clientEdit" @close="clientEdit = false">
+
+                        </example>
                     </p>
                 </div>
 

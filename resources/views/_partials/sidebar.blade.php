@@ -10,9 +10,9 @@
             </a>
 
             <div class="media-body">
-                <h5 class="media-heading">Makamu Evans</h5>
+                <h5 class="media-heading">{{ Auth::user()->first_name .' , '. Auth::user()->last_name }}</h5>
                 <ul class="list-unstyled user-info">
-                    <li><a href="">Administrator</a></li>
+                    <li><a href="">{{ Auth::user()->role }}</a></li>
                     <li>Last Access : <br>
                         <small><i class="fa fa-calendar"></i>&nbsp;16 Mar 16:32</small>
                     </li>
@@ -60,6 +60,23 @@
                 <li>
                     <a href="{{url('clients/add')}}">
                         <i class="fa fa-plus-square"></i>&nbsp; Add New Client </a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="javascript:;">
+                <i class="fa fa-user "></i>
+                <span class="link-title">Ticket</span>
+                <span class="fa arrow"></span>
+            </a>
+            <ul class="collapse">
+                <li>
+                    <a href="{{url('tickets')}}">
+                        <i class="fa fa-list"></i>&nbsp; List All</a>
+                </li>
+                <li>
+                    <a href="{{url('tickets/add')}}">
+                        <i class="fa fa-plus-square"></i>&nbsp; Add New Ticket </a>
                 </li>
             </ul>
         </li>
