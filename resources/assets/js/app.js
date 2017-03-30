@@ -17,6 +17,8 @@ require('../sass/custom/jquery-steps/jquery.steps');
 
 Vue.component('example', require('./components/Example.vue'));
 
+Vue.component('ticket_start', require('./components/ticket_start.vue'));
+
 const app = new Vue({
     el: '#app',
     data: {

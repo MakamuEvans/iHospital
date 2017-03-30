@@ -63,7 +63,7 @@
                 </li>
             </ul>
         </li>
-        <li>
+        <li @if(isset($rightbar)) @if($rightbar=='ticket')class="active" @endif @endif>
             <a href="javascript:;">
                 <i class="fa fa-user "></i>
                 <span class="link-title">Ticket</span>
@@ -76,7 +76,7 @@
                 </li>
                 <li>
                     <a href="{{url('tickets/add')}}">
-                        <i class="fa fa-plus-square"></i>&nbsp; Add New Ticket </a>
+                        <i class="fa fa-plus-square"></i>&nbsp; Create New Ticket </a>
                 </li>
             </ul>
         </li>

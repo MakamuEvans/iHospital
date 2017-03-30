@@ -43,7 +43,8 @@ Route::group(['middleware' => 'logIn'], function () {
     /**
      * Ticket routes
      */
-    Route::get('tickets', 'ClientsController@special_condition');
+    Route::get('tickets', 'TicketController@index');
+    Route::get('tickets/add', 'TicketController@add_form');
 
 
 });
