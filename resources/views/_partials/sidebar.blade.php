@@ -26,7 +26,7 @@
         <li class="nav-divider"></li>
         <li class="">
             <a href="{{url('/')}}">
-                <i class="fa fa-dashboard"></i><span class="link-title">&nbsp;Home</span>
+                <i class="fa fa-home"></i><span class="link-title">&nbsp;Home</span>
             </a>
         </li>
         <li @if(isset($rightbar)) @if($rightbar=='user')class="active" @endif @endif>
@@ -66,13 +66,17 @@
         <li @if(isset($rightbar)) @if($rightbar=='ticket')class="active" @endif @endif>
             <a href="javascript:;">
                 <i class="fa fa-user "></i>
-                <span class="link-title">Ticket</span>
+                <span class="link-title">Tickets</span>
                 <span class="fa arrow"></span>
             </a>
             <ul class="collapse">
                 <li>
                     <a href="{{url('tickets')}}">
                         <i class="fa fa-list"></i>&nbsp; List All</a>
+                </li>
+                <li>
+                    <a href="{{url('tickets/my-tickets')}}">
+                        <i class="fa fa-list"></i>&nbsp; My Tickets (All)</a>
                 </li>
                 <li>
                     <a href="{{url('tickets/add')}}">
