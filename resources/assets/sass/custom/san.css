@@ -193,3 +193,14 @@ Vue Modal
 .pullquote-left a:hover{
     color: white !important;
 }
+.myTicket{
+    min-height: 200px;
+    max-height: 500px;
+    overflow-y: scroll;
+}
+.myTicket div.panel-heading{
+    text-align: left !important;
+}
+.modal-container{
+    width: 90% !important;
+}

@@ -58,6 +58,13 @@ class TicketController extends Controller
         return view('ticket.start', compact('rightbar', 'title', 'data', 'available_doctors'));
     }
 
+    /**
+     * save a ticket to db
+     *
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
+
     public function start_store(Request $request){
         //issued by
         $request['issued_by'] = Auth::user()->id;
@@ -72,5 +79,29 @@ class TicketController extends Controller
         return redirect()->action('TicketController@add_form')
             ->with('status', 'Ticket Successfully created');
 
+    }
+
+    /**
+     * view my current tickets. and be able to manipulate them.
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function myTickets(){
+        $title = 'iHospital | My Tickets';
+        $rightbar = 'ticket';
+
+        return view('ticket.my-tickets.index', compact('title', 'rightbar'));
+    }
+
+    public function allActive(){
+        $ticket = Ticket::where('status', 'open')->get();
+
+        return Response::json($ticket);
+    }
+
+    public function selectedTicket($ticket_id){
+        $ticket = Ticket::findorFail($ticket_id);
+
+        return Response::json($ticket);
     }
 }

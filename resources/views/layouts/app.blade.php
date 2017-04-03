@@ -76,9 +76,9 @@
         })
     </script>
     <script>
-        $(function () {
-
-        });
+        $( function() {
+            $( "#accordion" ).accordion();
+        } );
     </script>
 
     <!--ui kit-->

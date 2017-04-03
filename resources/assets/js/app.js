@@ -21,6 +21,8 @@ Vue.component('ticket_start', require('./components/ticket_start.vue'));
 
 Vue.component('ticket', require('./components/ticket.vue'));
 
+Vue.component('issuedticket', require('./components/issueTicket.vue'));
+
 const app = new Vue({
     el: '#app',
     data: {
@@ -31,6 +33,8 @@ const app = new Vue({
 
 
 //other js files
+
+require('../sass/custom/accordion');
 
 require('metismenu');
 

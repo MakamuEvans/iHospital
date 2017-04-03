@@ -48,6 +48,9 @@ Route::group(['middleware' => 'logIn'], function () {
     Route::get('tickets/start', 'TicketController@start_form');
     Route::post('tickets/start', 'TicketController@start_store');
     Route::get('tickets/search', 'TicketController@searchClient');
+    Route::get('tickets/my-tickets', 'TicketController@myTickets');
+    Route::get('tickets/my-tickets/all-active', 'TicketController@allActive');
+    Route::get('tickets/my-tickets/{ticket_id}', 'TicketController@selectedTicket');
 
 
 });
